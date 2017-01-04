@@ -143,6 +143,10 @@ get_prop(zygote, device_config_runtime_native_boot_prop)
 # ingore spurious denials
 dontaudit zygote self:global_capability_class_set sys_resource;
 
+# Themes
+allow zygote theme_data_file:file r_file_perms;
+allow zygote theme_data_file:dir r_dir_perms;
+
 ###
 ### neverallow rules
 ###

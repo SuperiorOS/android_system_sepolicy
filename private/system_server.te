@@ -915,6 +915,9 @@ allow system_server functionfs:file rw_file_perms;
 # system_server contains time / time zone detection logic so reads the associated properties.
 get_prop(system_server, time_prop)
 
+# allow system_server to look into theme resources
+allow system_server theme_data_file:dir search;
+
 ###
 ### Neverallow rules
 ###
