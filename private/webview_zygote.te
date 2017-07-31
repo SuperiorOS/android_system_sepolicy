@@ -77,6 +77,10 @@ allow webview_zygote same_process_hal_file:file { execute read open getattr map 
 
 allow webview_zygote system_data_file:lnk_file r_file_perms;
 
+# Themes
+allow webview_zygote theme_data_file:file r_file_perms;
+allow webview_zygote theme_data_file:dir r_dir_perms;
+
 #####
 ##### Neverallow
 #####

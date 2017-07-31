@@ -70,6 +70,10 @@ r_dir_file(app_zygote, vendor_overlay_file)
 allow app_zygote system_data_file:lnk_file r_file_perms;
 allow app_zygote system_data_file:file { getattr read map };
 
+# Themes
+allow app_zygote theme_data_file:file r_file_perms;
+allow app_zygote theme_data_file:dir r_dir_perms;
+
 #####
 ##### Neverallow
 #####
