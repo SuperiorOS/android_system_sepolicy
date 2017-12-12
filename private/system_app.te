@@ -181,6 +181,9 @@ perfetto_producer(system_app)
 can_profile_heap(system_app)
 can_profile_perf(system_app)
 
+#selinux status
+allow system_app selinuxfs:file r_file_perms;
+
 ###
 ### Neverallow rules
 ###
