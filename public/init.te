@@ -489,6 +489,9 @@ allow init vendor_shell_exec:file execute;
 allow init vold_metadata_file:dir create_dir_perms;
 allow init vold_metadata_file:file getattr;
 
+# Allow init to touch PSI monitors
+allow init proc_pressure_mem:file { rw_file_perms setattr };
+
 ###
 ### neverallow rules
 ###
