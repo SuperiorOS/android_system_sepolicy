@@ -82,6 +82,9 @@ allow platform_app system_api_service:service_manager find;
 allow platform_app vr_manager_service:service_manager find;
 allow platform_app stats_service:service_manager find;
 
+# Access to /mnt/pass_through.
+allow platform_app mnt_pass_through_file:dir r_dir_perms;
+
 # Allow platform apps to log via statsd.
 binder_call(platform_app, statsd)
 
