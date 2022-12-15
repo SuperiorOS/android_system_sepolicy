@@ -158,6 +158,8 @@ get_prop(gmscore_app, remote_prov_prop)
 get_prop(gmscore_app, quick_start_prop)
 neverallow { domain -init -dumpstate -vendor_init -gmscore_app } quick_start_prop:file no_rw_file_perms;
 
+get_prop(gmscore_app, incremental_prop)
+
 # Do not allow getting permission-protected network information from sysfs.
 neverallow gmscore_app sysfs_net:file *;
 
