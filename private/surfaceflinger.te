@@ -157,3 +157,5 @@ neverallow surfaceflinger { sdcard_type fuse }:file rw_file_perms;
 
 # b/68864350
 dontaudit surfaceflinger unlabeled:dir search;
+
+allow surfaceflinger unlabeled:filesystem getattr;
