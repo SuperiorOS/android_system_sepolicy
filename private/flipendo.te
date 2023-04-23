@@ -1,0 +1,26 @@
+type flipendo, domain, coredomain;
+
+app_domain(flipendo)
+
+# binder calls
+binder_call(flipendo, gpuservice)
+binder_call(flipendo, servicemanager)
+binder_call(flipendo, statsd)
+binder_call(flipendo, stats_service_server)
+
+# Access to PowerHal service
+hal_client_domain(flipendo, hal_power);
+
+# Access system files/nodes
+allow flipendo flipendo_userfaultfd:anon_inode { ioctl read create };
+allow flipendo appdomain_tmpfs:file { read write getattr map execute };
+allow flipendo flipendo:dir search;
+allow flipendo flipendo:process { fork getsched };
+allow flipendo flipendo:unix_dgram_socket create;
+
+# Find services
+allow flipendo app_api_service:service_manager find;
+allow flipendo fwk_stats_hwservice:hwservice_manager find;
+allow flipendo color_display_service:service_manager find;
+
+dontaudit flipendo vendor_hwservice_type:hwservice_manager find;
