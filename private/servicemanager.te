@@ -12,3 +12,12 @@ use_bootstrap_libs(servicemanager)
 
 # servicemanager is using apex_info via libvintf
 use_apex_info(servicemanager)
+
+allow servicemanager flipendo:binder { call transfer };
+allow servicemanager flipendo:dir { search };
+allow servicemanager flipendo:file { read open };
+allow servicemanager flipendo:process { getattr };
+allow servicemanager untrusted_app:binder { call transfer };
+allow servicemanager untrusted_app:dir { search };
+allow servicemanager untrusted_app:file { read open };
+allow servicemanager untrusted_app:process { getattr };

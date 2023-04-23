@@ -152,6 +152,30 @@ dontaudit priv_app sysfs_android_usb:file read;
 dontaudit priv_app sysfs_dm:file r_file_perms;
 dontaudit priv_app { wifi_prop wifi_hal_prop }:file read;
 
+# Custom sepolicy rules
+# binder calls
+binder_call(priv_app, gpuservice)
+binder_call(priv_app, servicemanager)
+binder_call(priv_app, statsd)
+binder_call(priv_app, stats_service_server)
+
+# Access to PowerHal service
+hal_client_domain(priv_app, hal_power);
+
+# Access system files/nodes
+allow priv_app priv_app_userfaultfd:anon_inode { ioctl read create };
+allow priv_app appdomain_tmpfs:file { read write getattr map execute };
+allow priv_app flipendo:dir search;
+allow priv_app flipendo:process { fork getsched };
+allow priv_app flipendo:unix_dgram_socket create;
+
+# Find services
+allow priv_app app_api_service:service_manager find;
+allow priv_app fwk_stats_hwservice:hwservice_manager find;
+allow priv_app color_display_service:service_manager find;
+
+dontaudit priv_app vendor_hwservice_type:hwservice_manager find;
+
 # allow privileged apps to use UDP sockets provided by the system server but not
 # modify them other than to connect
 allow priv_app system_server:udp_socket {
