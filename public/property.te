@@ -254,6 +254,7 @@ system_public_prop(wifi_hal_prop)
 system_public_prop(wifi_log_prop)
 system_public_prop(wifi_prop)
 system_public_prop(zram_control_prop)
+system_public_prop(camera2_exported_camera_prop)
 
 # Properties which don't have entries on property_contexts
 system_internal_prop(default_prop)
