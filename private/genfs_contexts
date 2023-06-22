@@ -259,8 +259,12 @@ genfscon tracefs /events/sched/sched_wakeup_new/                         u:objec
 genfscon tracefs /events/sched/sched_waking/                             u:object_r:debugfs_tracing:s0
 genfscon tracefs /events/sched/sched_blocked_reason/                     u:object_r:debugfs_tracing:s0
 genfscon tracefs /events/sched/sched_cpu_hotplug/                        u:object_r:debugfs_tracing:s0
+genfscon tracefs /events/sched/sched_process_exec/                       u:object_r:debugfs_tracing:s0
 genfscon tracefs /events/sched/sched_process_exit/                       u:object_r:debugfs_tracing:s0
+genfscon tracefs /events/sched/sched_process_fork/                       u:object_r:debugfs_tracing:s0
 genfscon tracefs /events/sched/sched_process_free/                       u:object_r:debugfs_tracing:s0
+genfscon tracefs /events/sched/sched_process_hang/                       u:object_r:debugfs_tracing:s0
+genfscon tracefs /events/sched/sched_process_wait/                       u:object_r:debugfs_tracing:s0
 genfscon tracefs /events/sched/sched_pi_setprio/                         u:object_r:debugfs_tracing:s0
 genfscon tracefs /events/cgroup/                                         u:object_r:debugfs_tracing:s0
 genfscon tracefs /events/power/cpu_frequency/                            u:object_r:debugfs_tracing:s0
@@ -324,8 +328,12 @@ genfscon debugfs /tracing/events/sched/sched_wakeup_new/                        
 genfscon debugfs /tracing/events/sched/sched_waking/                             u:object_r:debugfs_tracing:s0
 genfscon debugfs /tracing/events/sched/sched_blocked_reason/                     u:object_r:debugfs_tracing:s0
 genfscon debugfs /tracing/events/sched/sched_cpu_hotplug/                        u:object_r:debugfs_tracing:s0
+genfscon debugfs /tracing/events/sched/sched_process_exec/                       u:object_r:debugfs_tracing:s0
 genfscon debugfs /tracing/events/sched/sched_process_exit/                       u:object_r:debugfs_tracing:s0
+genfscon debugfs /tracing/events/sched/sched_process_fork/                       u:object_r:debugfs_tracing:s0
 genfscon debugfs /tracing/events/sched/sched_process_free/                       u:object_r:debugfs_tracing:s0
+genfscon debugfs /tracing/events/sched/sched_process_hang/                       u:object_r:debugfs_tracing:s0
+genfscon debugfs /tracing/events/sched/sched_process_wait/                       u:object_r:debugfs_tracing:s0
 genfscon debugfs /tracing/events/sched/sched_pi_setprio/                         u:object_r:debugfs_tracing:s0
 genfscon debugfs /tracing/events/cgroup/                                         u:object_r:debugfs_tracing:s0
 genfscon debugfs /tracing/events/power/cpu_frequency/                            u:object_r:debugfs_tracing:s0
