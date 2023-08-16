@@ -64,6 +64,9 @@ allow init mnt_sdcard_file:lnk_file create;
 # setrlimit
 allow init self:global_capability_class_set sys_resource;
 
+# set uclamp
+allow init self:global_capability_class_set sys_nice;
+
 # Remove /dev/.booting and load /debug_ramdisk/* files
 allow init tmpfs:file { getattr unlink };
 
