@@ -112,6 +112,7 @@ file_contexts {
         ":file_contexts_files{.vendor}",
     ],
     soc_specific: true,
+    fc_sort: true,
 }
 
 file_contexts {
@@ -122,6 +123,7 @@ file_contexts {
     ],
     stem: "vendor_file_contexts",
     recovery: true,
+    fc_sort: true,
 }
 
 file_contexts {
@@ -154,6 +156,7 @@ file_contexts {
     name: "odm_file_contexts",
     srcs: [":file_contexts_files{.odm}"],
     device_specific: true,
+    fc_sort: true,
 }
 
 file_contexts {
@@ -161,6 +164,7 @@ file_contexts {
     srcs: [":file_contexts_files{.odm}"],
     stem: "odm_file_contexts",
     recovery: true,
+    fc_sort: true,
 }
 
 hwservice_contexts {
