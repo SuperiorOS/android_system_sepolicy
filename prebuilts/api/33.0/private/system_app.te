@@ -177,6 +177,9 @@ get_prop(system_app, oem_unlock_prop)
 # Allow system apps to act as Perfetto producers.
 perfetto_producer(system_app)
 
+#selinux status 
+allow system_app selinuxfs:file r_file_perms;
+
 # Allow performance profiling by the platform itself.
 can_profile_heap(system_app)
 can_profile_perf(system_app)
